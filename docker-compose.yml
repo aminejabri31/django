@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    volumes:
+      - .:/app  # Bind mount the current directory to /app in the container
+    ports:
+      - "8001:8000"  # Expose port 8000
+    environment:
+      - PYTHONUNBUFFERED=1  # Ensure that logs are output immediately
